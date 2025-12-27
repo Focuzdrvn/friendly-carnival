@@ -5,7 +5,7 @@ services:
     env: node
     repo: https://github.com/Focuzdrvn/friendly-carnival.git
     branch: main
-    buildCommand: npm install
+    buildCommand: npm install && cd client && npm install && npm run build && cd ..
     startCommand: node server/index.js
     healthCheckPath: /api/health
     envVars:
