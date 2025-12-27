@@ -8,6 +8,7 @@ import authRoutes from './routes/auth.js';
 import teamRoutes from './routes/teams.js';
 import templateRoutes from './routes/templates.js';
 import emailRoutes from './routes/email.js';
+import { verifyConnection } from './services/emailService.js';
 
 dotenv.config();
 
@@ -67,7 +68,19 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, '0.0.0.0', async () => {
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`🌐 Environment: ${process.env.NODE_ENV || 'development'}`);
+  
+  // Verify SMTP connection on startup
+  if (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS) {
+    try {
+      await verifyConnection();
+    } catch (error) {
+      console.error('⚠️  SMTP verification failed. Email sending may not work.');
+      console.error('⚠️  Please check your SMTP environment variables.');
+    }
+  } else {
+    console.warn('⚠️  SMTP environment variables not configured. Email features will not work.');
+  }
 });
