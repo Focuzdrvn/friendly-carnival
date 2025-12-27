@@ -6,7 +6,8 @@ services:
     repo: https://github.com/Focuzdrvn/friendly-carnival.git
     branch: main
     buildCommand: npm install
-    startCommand: npm run start
+    startCommand: node server/index.js
+    healthCheckPath: /api/health
     envVars:
       - key: NODE_ENV
         value: production
@@ -27,4 +28,8 @@ services:
       - key: EMAIL_USER
         sync: false
       - key: EMAIL_PASSWORD
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
+      - key: MONGO_URI
         sync: false
