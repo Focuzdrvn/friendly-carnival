@@ -3,7 +3,7 @@ import axios from 'axios';
 // In production, use relative URL since frontend is served from the same domain
 // In development, use localhost
 const API_URL = import.meta.env.VITE_API_URL || 
-  (import.meta.env.PROD ? '/api' : 'http://localhost:5001/api');
+  (import.meta.env.PROD ? '/api' : 'http://https://friendly-carnival.onrender.com/api');
 
 const api = axios.create({
   baseURL: API_URL,
