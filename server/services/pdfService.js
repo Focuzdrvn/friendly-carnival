@@ -19,7 +19,7 @@ export const generateInvoicePDF = (team, outputPath) => {
       doc.fillColor('#667eea')
          .fontSize(12)
          .font('Helvetica')
-         .text('Hackathon 2025', 50, 85);
+         .text('Hackathon 2026', 50, 85);
 
       // Draw top line
       doc.moveTo(50, 110)
