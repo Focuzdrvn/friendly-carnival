@@ -8,6 +8,8 @@ import authRoutes from './routes/auth.js';
 import teamRoutes from './routes/teams.js';
 import templateRoutes from './routes/templates.js';
 import emailRoutes from './routes/email.js';
+import expenseRoutes from './routes/expenses.js';
+import incomeRoutes from './routes/income.js';
 import { verifyConnection } from './services/emailService.js';
 
 dotenv.config();
@@ -42,6 +44,8 @@ app.use('/api/auth', authRoutes);
 app.use('/api/teams', teamRoutes);
 app.use('/api/templates', templateRoutes);
 app.use('/api/email', emailRoutes);
+app.use('/api/income', incomeRoutes);
+app.use('/api/expenses', expenseRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {

@@ -1,6 +1,6 @@
 import { Outlet, NavLink } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { LayoutDashboard, Users, Mail, FileText, LogOut, Sparkles } from 'lucide-react';
+import { LayoutDashboard, Users, Mail, FileText, LogOut, Sparkles, Receipt, TrendingUp } from 'lucide-react';
 
 const Layout = () => {
   const { user, logout } = useAuth();
@@ -10,6 +10,8 @@ const Layout = () => {
     { to: '/teams', icon: Users, label: 'Teams' },
     { to: '/templates', icon: FileText, label: 'Templates' },
     { to: '/bulk-email', icon: Mail, label: 'Bulk Email' },
+    { to: '/expenses', icon: Receipt, label: 'Expenses' },
+    { to: '/income', icon: TrendingUp, label: 'Income' },
   ];
 
   return (

@@ -7,6 +7,8 @@ import Dashboard from './pages/Dashboard';
 import Teams from './pages/Teams';
 import Templates from './pages/Templates';
 import BulkEmail from './pages/BulkEmail';
+import Expenses from './pages/Expenses';
+import Income from './pages/Income';
 import Layout from './components/Layout';
 
 const PrivateRoute = ({ children }) => {
@@ -44,6 +46,8 @@ function App() {
             <Route path="teams" element={<Teams />} />
             <Route path="templates" element={<Templates />} />
             <Route path="bulk-email" element={<BulkEmail />} />
+            <Route path="expenses" element={<Expenses />} />
+            <Route path="income" element={<Income />} />
           </Route>
         </Routes>
       </Router>
