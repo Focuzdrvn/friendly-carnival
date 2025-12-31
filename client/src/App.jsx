@@ -9,6 +9,7 @@ import Templates from './pages/Templates';
 import BulkEmail from './pages/BulkEmail';
 import Expenses from './pages/Expenses';
 import Income from './pages/Income';
+import Invoices from './pages/Invoices';
 import Layout from './components/Layout';
 
 const PrivateRoute = ({ children }) => {
@@ -48,6 +49,7 @@ function App() {
             <Route path="bulk-email" element={<BulkEmail />} />
             <Route path="expenses" element={<Expenses />} />
             <Route path="income" element={<Income />} />
+            <Route path="invoices" element={<Invoices />} />
           </Route>
         </Routes>
       </Router>
